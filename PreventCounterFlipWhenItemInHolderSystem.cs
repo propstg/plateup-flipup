@@ -17,14 +17,14 @@ namespace KitchenFlipUp {
         protected override void Perform(ref InteractionData data) {
             FlipUpMod.Log("perform, current state = " + state.open);
 
-            if (doesCounterHaveItemOnIt(data)) {
+            if (isCounterClearOfItems(data)) {
                 state.open = !state.open;
                 FlipUpMod.Log("new state = " + state.open);
                 SetComponent(data.Target, state);
             }
         }
 
-        private bool doesCounterHaveItemOnIt(InteractionData data) {
+        private bool isCounterClearOfItems(InteractionData data) {
             return Require<CItemHolder>(data.Target, out var holder) && holder.HeldItem == default;
         }
     }

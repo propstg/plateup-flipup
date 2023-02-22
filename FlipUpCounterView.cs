@@ -34,14 +34,22 @@ namespace KitchenFlipUp {
             }
 
             protected override void OnUpdate() {
+                var entities = viewsQuery.ToEntityArray(Allocator.TempJob);
                 var views = viewsQuery.ToComponentDataArray<CLinkedView>(Allocator.Temp);
                 var components = viewsQuery.ToComponentDataArray<CFlipUpCounterState>(Allocator.Temp);
 
                 for (var i = 0; i < views.Length; i++) {
+                    var entity = entities[i];
                     var view = views[i];
                     var data = components[i];
 
                     SendUpdate(view, new ViewData { open = data.open }, MessageType.SpecificViewUpdate);
+
+                    if (data.open) {
+                        EntityManager.AddComponent<CIsInactive>(entity);
+                    } else {
+                        EntityManager.RemoveComponent<CIsInactive>(entity);
+                    }
                 }
 
                 views.Dispose();

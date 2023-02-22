@@ -21,6 +21,10 @@ namespace KitchenFlipUp {
         public override List<IApplianceProperty> Properties => new List<IApplianceProperty>() {
             new CItemHolder(),
             new CFlipUpCounterState(),
+            new CItemTransferRestrictions {
+                AllowWhenInactive = false,
+                AllowWhenActive = true,
+            },
         };
 
         public override List<(Locale, ApplianceInfo)> InfoList => new List<(Locale, ApplianceInfo)> {
