@@ -38,6 +38,10 @@ namespace KitchenFlipUp {
             }
         };
 
+        public override List<Appliance> Upgrades => new List<Appliance>() {
+            GDOUtils.GetExistingGDO(ApplianceReferences.Countertop) as Appliance
+        };
+
         public override void OnRegister(GameDataObject gameDataObject) {
             setupMaterials();
             setupHoldPoint();
