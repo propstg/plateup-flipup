@@ -1,17 +1,18 @@
+scale([0.01, 0.01, 0.01])
 //referenceCube();
-counterBase();
-counterOverBase();
-counterOverBaseRim();
+//counterBase();
+//counterOverBase();
+//counterOverBaseRim();
 
-liftMechanism();
+//liftMechanism();
 
-counterOpen();
-armOpen();
-counterOpenRim();
+//counterOpen();
+//armOpen();
+//counterOpenRim();
 
 //counterClosed();
 //armClosed();
-//counterClosedRim();
+counterClosedRim();
 
 module counterBase() {
     color("white")
@@ -43,9 +44,13 @@ module counterOpen() {
 }
 
 module counterOpenRim() {
-    color("green")
-    translate([-50.05, 20.05, 49.95])
-    cube([100.1, 9.9, 80.1]);
+    difference() {
+        color("green")
+        translate([-50.05, 20.05, 49.95])
+        cube([100.1, 9.9, 80.1]);
+        
+        counterOpen();
+    }
 }
 
 module liftMechanism() {
