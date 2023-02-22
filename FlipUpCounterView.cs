@@ -52,6 +52,7 @@ namespace KitchenFlipUp {
                     }
                 }
 
+                entities.Dispose();
                 views.Dispose();
                 components.Dispose();
             }

@@ -12,7 +12,7 @@ namespace KitchenFlipUp {
 
         public override GameObject Prefab => FlipUpMod.bundle.LoadAsset<GameObject>("FlipUpCounter");
         public override PriceTier PriceTier => PriceTier.Medium;
-        public override ShoppingTags ShoppingTags => ShoppingTags.Basic;
+        public override ShoppingTags ShoppingTags => ShoppingTags.Cooking;
         public override bool IsNonInteractive => false;
         public override bool IsPurchasable => true;
         public override bool SellOnlyAsDuplicate => false;
@@ -39,7 +39,12 @@ namespace KitchenFlipUp {
                 Process = (Process)GDOUtils.GetExistingGDO(ProcessReferences.Chop),
                 Speed = 1f,
                 IsAutomatic = false
-            }
+            },
+            new Appliance.ApplianceProcesses() {
+                Process = (Process)GDOUtils.GetExistingGDO(ProcessReferences.Knead),
+                Speed = 1f,
+                IsAutomatic = false
+            },
         };
 
         public override List<Appliance> Upgrades => new List<Appliance>() {

@@ -22,7 +22,7 @@ namespace KitchenFlipUp {
 
         protected override void OnPostActivate(Mod mod) {
             Log($"v{MOD_VERSION} initialized");
-            Log($"{MOD_VERSION} Loading asset bundle...");
+            Log($"Loading asset bundle...");
             bundle = mod.GetPacks<AssetBundleModPack>().SelectMany(e => e.AssetBundles).First();
             Log($"Asset bundle loaded.");
 
