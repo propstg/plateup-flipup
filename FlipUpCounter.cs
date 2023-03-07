@@ -63,18 +63,21 @@ namespace KitchenFlipUp {
             var metal = MaterialUtils.GetExistingMaterial("Metal- Shiny");
             var road = MaterialUtils.GetExistingMaterial("Road");
             var cabinet = MaterialUtils.GetExistingMaterial("Wood 4 - Painted");
+            var doorGlass = MaterialUtils.GetExistingMaterial("Door Glass");
+            var metalBlack = MaterialUtils.GetExistingMaterial("Metal Black");
 
             MaterialUtils.ApplyMaterial(Prefab, "base/cabinet", new Material[] { cabinet });
             MaterialUtils.ApplyMaterial(Prefab, "base/counter", new Material[] { wood });
             MaterialUtils.ApplyMaterial(Prefab, "base/lift mechanism", new Material[] { road });
             MaterialUtils.ApplyMaterial(Prefab, "base/rim", new Material[] { woodEdge });
             MaterialUtils.ApplyMaterial(Prefab, "closed/arm", new Material[] { metal });
-            MaterialUtils.ApplyMaterial(Prefab, "closed/counter", new Material[] { wood });
-            MaterialUtils.ApplyMaterial(Prefab, "closed/rim", new Material[] { woodEdge });
+            MaterialUtils.ApplyMaterial(Prefab, "closed/counter", new Material[] { doorGlass });
+            MaterialUtils.ApplyMaterial(Prefab, "closed/rim", new Material[] { metalBlack });
             MaterialUtils.ApplyMaterial(Prefab, "open/arm", new Material[] { metal });
-            MaterialUtils.ApplyMaterial(Prefab, "open/counter", new Material[] { wood });
-            MaterialUtils.ApplyMaterial(Prefab, "open/rim", new Material[] { woodEdge });
+            MaterialUtils.ApplyMaterial(Prefab, "open/counter", new Material[] { doorGlass });
+            MaterialUtils.ApplyMaterial(Prefab, "open/rim", new Material[] { metalBlack });
         }
+
         private void setupHoldPoint() {
             HoldPointContainer container = Prefab.AddComponent<HoldPointContainer>();
             container.HoldPoint = GameObjectUtils.GetChildObject(Prefab, "closed/HoldPoint").transform;
