@@ -1,4 +1,5 @@
-﻿using Kitchen;
+﻿using ApplianceLib.Api;
+using Kitchen;
 using KitchenData;
 using KitchenLib.Customs;
 using KitchenLib.References;
@@ -55,6 +56,7 @@ namespace KitchenFlipUp {
             setupMaterials();
             setupHoldPoint();
             setupCustomView();
+            ApplianceGroups.AddApplianceToGroup(ApplianceGroup.AllCounters, GDOUtils.GetCastedGDO<Appliance, FlipUpCounter>());
         }
 
         private void setupMaterials() {

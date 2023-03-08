@@ -15,7 +15,7 @@ namespace KitchenFlipUp {
 
         public const string MOD_ID = "blargle.FlipUp";
         public const string MOD_NAME = "FlipUp!";
-        public const string MOD_VERSION = "0.0.2";
+        public const string MOD_VERSION = "0.0.3";
         public const string MOD_AUTHOR = "blargle";
 
         public static AssetBundle bundle;
