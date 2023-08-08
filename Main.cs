@@ -15,12 +15,12 @@ namespace KitchenFlipUp {
 
         public const string MOD_ID = "blargle.FlipUp";
         public const string MOD_NAME = "FlipUp!";
-        public const string MOD_VERSION = "0.0.3";
+        public const string MOD_VERSION = "0.1.0";
         public const string MOD_AUTHOR = "blargle";
 
         public static AssetBundle bundle;
 
-        public FlipUpMod() : base(MOD_ID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, "1.1.4", Assembly.GetExecutingAssembly()) { }
+        public FlipUpMod() : base(MOD_ID, MOD_NAME, MOD_AUTHOR, MOD_VERSION, "1.1.7", Assembly.GetExecutingAssembly()) { }
 
         protected override void OnPostActivate(Mod mod) {
             Log($"v{MOD_VERSION} initialized");

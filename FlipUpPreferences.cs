@@ -7,7 +7,7 @@ namespace KitchenFlipUp {
         public static readonly Pref IncludeInUpgrades = new Pref(FlipUpMod.MOD_ID, nameof(IncludeInUpgrades));
 
         public static void register() {
-            Preferences.AddPreference<bool>(new Kitchen.BoolPreference(IncludeInUpgrades, true));
+            Preferences.AddPreference<bool>(new BoolPreference(IncludeInUpgrades, true));
             Preferences.Load();
         }
 
